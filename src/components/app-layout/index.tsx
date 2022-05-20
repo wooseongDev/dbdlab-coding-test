@@ -21,13 +21,18 @@ export const AppLayout: React.FC<AppLayoutProp> = (props) => {
 
 const rootStyle = css`
   display: flex;
+  // sidebar width + gap
+  padding-left: calc(252px + 23px);
   width: 100%;
   min-height: 100vh;
 `
 
 const sidebarStyle = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
   flex-shrink: 0;
-  margin-right: 23px;
 `
 
 const mainStyle = css`

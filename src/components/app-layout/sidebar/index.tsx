@@ -26,6 +26,7 @@ const rootStyle = css`
   padding-top: 48px;
   padding-bottom: 48px;
   width: 252px;
+  height: 100%;
   background-color: #f8f8f8;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 `
