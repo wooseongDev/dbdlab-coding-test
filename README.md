@@ -48,7 +48,7 @@ yarn start
 - [x] README 업데이트
 - [x] code-style 설정
 - [x] 절대 경로 설정
-- [ ] 글로벌 스타일 작성 및 적용
+- [x] 글로벌 스타일 작성 및 적용
     - emotion 설치
     - next config 의 emotion 설정
 - [ ] layout component 작성
