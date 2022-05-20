@@ -47,12 +47,19 @@ yarn start
 
 - [x] README 업데이트
 - [x] code-style 설정
+- [ ] 절대 경로 설정
 - [ ] 글로벌 스타일 작성 및 적용
+    - emotion 설치
+    - next config 의 emotion 설정
 - [ ] layout component 작성
-- [ ] sidebar component 작성
+    - [ ] sidebar component 작성
+    - [ ] menu component 작성
     - [ ] sidebar 메뉴에 맞는 page 작성
 - [ ] json 파일 api 작성
+    - axios 설치
+    - next js api 작성
 - [ ] 코로나 확진자 수 차트 작성
+    - 차트 라이브러리 설치
     - [ ] 일자별
     - [ ] 연령별
     - [ ] 성별
