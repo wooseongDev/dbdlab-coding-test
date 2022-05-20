@@ -51,8 +51,8 @@ yarn start
 - [x] 글로벌 스타일 작성 및 적용
     - emotion 설치
     - next config 의 emotion 설정
-- [ ] layout component 작성
-    - [ ] sidebar component 작성
+- [x] layout component 작성
+    - [x] sidebar component 작성
     - [ ] menu component 작성
     - [ ] sidebar 메뉴에 맞는 page 작성
 - [ ] json 파일 api 작성

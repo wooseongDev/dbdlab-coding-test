@@ -1,3 +1,4 @@
+import { AppLayout } from '@components/app-layout'
 import { Global } from '@emotion/react'
 import { globalStyle } from '@styles/global-style'
 import type { AppProps } from 'next/app'
@@ -16,7 +17,10 @@ const App: React.FC<AppProps> = (prop) => {
       </Head>
 
       <Global styles={globalStyle} />
-      <Component {...pageProps} />
+
+      <AppLayout>
+        <Component {...pageProps} />
+      </AppLayout>
     </>
   )
 }

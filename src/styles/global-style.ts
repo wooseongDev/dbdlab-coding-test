@@ -9,6 +9,7 @@ export const globalStyle = css`
 
   body {
     box-sizing: border-box;
+    background-color: #f8f8f8;
     font-size: 16px;
     font-weight: 400;
     font-family: 'Red Hat Display', 'Noto Sans KR', sans-serif;
@@ -39,6 +40,7 @@ export const globalStyle = css`
   a {
     color: inherit;
     text-decoration: none;
+    cursor: pointer;
   }
 
   button {
