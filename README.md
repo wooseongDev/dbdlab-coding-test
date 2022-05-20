@@ -53,8 +53,8 @@ yarn start
     - next config 의 emotion 설정
 - [x] layout component 작성
     - [x] sidebar component 작성
-    - [ ] menu component 작성
-    - [ ] sidebar 메뉴에 맞는 page 작성
+    - [x] menu component 작성
+    - [x] sidebar 메뉴에 맞는 page 작성
 - [ ] layout component 수정
     - sidebar component 의 position 을 fixed 로 적용
 - [ ] json 파일 api 작성

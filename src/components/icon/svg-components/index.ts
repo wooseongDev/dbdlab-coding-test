@@ -1,1 +1,7 @@
+export { ArrowDown } from './arrow-down'
+export { Calendar } from './calendar'
+export { Dashboard } from './dashboard'
+export { Insight } from './insight'
 export { Logo } from './logo'
+export { Members } from './members'
+export { Research } from './research'

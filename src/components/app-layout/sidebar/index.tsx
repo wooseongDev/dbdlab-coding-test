@@ -1,3 +1,4 @@
+import { NavMenu } from '@components/app-layout/sidebar/nav-menu'
 import { Icon } from '@components/icon'
 import { css } from '@emotion/react'
 import React from 'react'
@@ -15,6 +16,8 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
         <Icon name="Logo" size={24} />
         <p>DBDLAB Corp.</p>
       </div>
+
+      <NavMenu />
     </aside>
   )
 }
