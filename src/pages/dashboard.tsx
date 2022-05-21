@@ -1,3 +1,4 @@
+import { CovidAgeDailyChart } from '@components/covid-age-daily-chart'
 import { CovidDailyChart } from '@components/covid-daily-chart'
 import { css } from '@emotion/react'
 import { api } from '@tools/api'
@@ -16,7 +17,8 @@ const Dashboard: NextPage<DashboardProps> = (props) => {
 
   return (
     <div css={rootStyle}>
-      <CovidDailyChart data={covid19Items} />
+      <CovidDailyChart css={covidDailyChartStyle} data={covid19Items} />
+      <CovidAgeDailyChart data={genAgeCaseItems} />
     </div>
   )
 }
@@ -40,9 +42,8 @@ const rootStyle = css`
   box-shadow: -2px -2px 3px rgba(0, 0, 0, 0.04);
 `
 
-const textStyle = css`
-  padding: 48px;
-  font-size: 20px;
+const covidDailyChartStyle = css`
+  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
 `
 
 export default Dashboard

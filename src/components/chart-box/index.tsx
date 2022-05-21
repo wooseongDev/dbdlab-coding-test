@@ -45,7 +45,7 @@ const titleWrapPaddingMap: { [key in StyleProps['size']]: SerializedStyles } = {
 const titleWrapStyle = (size: StyleProps['size']) => css`
   ${titleWrapPaddingMap[size]}
 
-  border-bottom: 1px solid rgba(204, 204, 204, 0.5); ;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
 `
 
 const titleStyle = css`
