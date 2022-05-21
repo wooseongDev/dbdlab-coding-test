@@ -8,6 +8,8 @@
 
 - Next js
 - Typescript
+- axios
+- Chart.js, react-chartjs-2
 
 ## Demo
 
