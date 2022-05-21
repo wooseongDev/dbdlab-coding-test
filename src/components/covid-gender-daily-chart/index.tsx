@@ -54,12 +54,13 @@ export const CovidGenderDailyChart: React.FC<CovidGenderDailyChartProps> = (prop
     <ChartBox className={className} title="일자별 성별 확진자 수" size="medium">
       <div css={chartWrapStyle}>
         <Select
+          css={selectStyle}
+          selected={selectedDate}
+          onChange={onChange}
           options={dates.map((date) => ({
             value: date,
             label: dayjs(date).format('MM/DD'),
           }))}
-          selected={selectedDate}
-          onChange={onChange}
         />
 
         <Doughnut css={chartStyle} data={chartData} options={options} />
@@ -72,7 +73,14 @@ const chartWrapStyle = css`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  padding-bottom: 52px;
   width: 100%;
+`
+
+const selectStyle = css`
+  margin-bottom: 29px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 `
 
 const chartStyle = css`

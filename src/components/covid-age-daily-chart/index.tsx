@@ -60,10 +60,21 @@ export const CovidAgeDailyChart: React.FC<CovidAgeDailyChartProps> = (props) => 
 
   return (
     <ChartBox className={className} title="일자별 연령대 확진자 수" size="medium">
-      <Bar css={chartStyle} data={chartData} options={options} />
+      <div css={chartWrapStyle}>
+        <Bar css={chartStyle} data={chartData} options={options} />
+      </div>
     </ChartBox>
   )
 }
+
+const chartWrapStyle = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 58px;
+  padding-bottom: 75px;
+  width: 100%;
+`
 
 const chartStyle = css`
   max-height: 249px;

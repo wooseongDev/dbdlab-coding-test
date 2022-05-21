@@ -71,6 +71,6 @@ yarn start
 - [ ] 리팩터링
     - [x] hooks 폴더 절대경로 설정
     - [x] server side props 에서 data 날짜별 sorting 하기
-    - [ ] css 수정
+    - [x] css 수정
     - [ ] 차트 데이터 hooks 로 분리
     - [ ] dashboard 차트 그룹 컴포넌트 작성

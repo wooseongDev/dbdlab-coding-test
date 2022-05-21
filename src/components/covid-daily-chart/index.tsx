@@ -41,14 +41,25 @@ export const CovidDailyChart: React.FC<CovidDailyChartProps> = (props) => {
 
   return (
     <ChartBox className={className} title="코로나 일자별 확진자 수">
-      <Line css={chartStyle} data={chartData} options={options} />
+      <div css={chartWrapStyle}>
+        <Line css={chartStyle} data={chartData} options={options} />
+      </div>
     </ChartBox>
   )
 }
 
+const chartWrapStyle = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 88px;
+  padding-bottom: 32px;
+  width: 100%;
+`
+
 const chartStyle = css`
-  max-width: 840px;
-  max-height: 274px;
+  max-width: 839px;
+  max-height: 273px;
   // * canvas inline style 적용 방지
   width: 100% !important;
   height: 100% !important;

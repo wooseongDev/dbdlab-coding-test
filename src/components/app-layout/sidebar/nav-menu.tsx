@@ -19,7 +19,7 @@ export const NavMenu = () => {
         return (
           <ALink key={item.name} href={item.path} css={itemStyle(isActive)}>
             <Icon name={item.icon} size={16} color={isActive ? 'inherit' : undefined} />
-            <p>{item.name}</p>
+            <p css={labelStyle}>{item.name}</p>
           </ALink>
         )
       })}
@@ -32,7 +32,7 @@ const rootStyle = css`
   flex-direction: column;
   padding-left: 48px;
 
-  & > *:not(:first-child) {
+  & > *:not(:first-of-type) {
     margin-top: 10px;
   }
 `
@@ -44,8 +44,8 @@ const itemStyle = (active: boolean) => css`
   padding-bottom: 10px;
   color: ${active ? '#2878f0' : '#282828'};
   font-weight: ${active ? '700' : '400'};
+`
 
-  & > *:first-child {
-    margin-right: 8px;
-  }
+const labelStyle = css`
+  margin-left: 8px;
 `

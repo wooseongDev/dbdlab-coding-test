@@ -14,7 +14,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
     <aside className={className} css={rootStyle}>
       <div css={logoWrapStyle}>
         <Icon name="Logo" size={24} />
-        <p>DBDLAB Corp.</p>
+        <p css={labelStyle}>DBDLAB Corp.</p>
       </div>
 
       <NavMenu />
@@ -37,8 +37,8 @@ const logoWrapStyle = css`
   margin-bottom: 56px;
   padding-left: 48px;
   font-weight: 700;
+`
 
-  & > *:first-child {
-    margin-right: 8px;
-  }
+const labelStyle = css`
+  margin-left: 8px;
 `

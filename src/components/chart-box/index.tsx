@@ -19,7 +19,7 @@ export const ChartBox: React.FC<ChartBoxProp> = (props) => {
         <h2 css={titleStyle}>{title}</h2>
       </div>
 
-      <div css={chartWrapStyle(size)}>{children}</div>
+      <div css={chartWrapStyle}>{children}</div>
     </div>
   )
 }
@@ -55,23 +55,7 @@ const titleStyle = css`
   font-weight: bold;
 `
 
-const chartWrapPaddingMap: { [key in StyleProps['size']]: SerializedStyles } = {
-  medium: css`
-    padding-top: 55px;
-    padding-bottom: 52px;
-  `,
-  large: css`
-    padding-top: 88px;
-    padding-bottom: 32px;
-  `,
-}
-
-const chartWrapStyle = (size: StyleProps['size']) => css`
-  ${chartWrapPaddingMap[size]}
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const chartWrapStyle = css`
   padding-left: 24px;
   padding-right: 24px;
 `
