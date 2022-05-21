@@ -1,6 +1,16 @@
-import { BarElement, CategoryScale, Chart, Legend, LinearScale, LineElement, PointElement, Tooltip } from 'chart.js'
+import {
+  ArcElement,
+  BarElement,
+  CategoryScale,
+  Chart,
+  Legend,
+  LinearScale,
+  LineElement,
+  PointElement,
+  Tooltip,
+} from 'chart.js'
 
-Chart.register(BarElement, CategoryScale, Legend, LinearScale, LineElement, PointElement, Tooltip)
+Chart.register(ArcElement, BarElement, CategoryScale, Legend, LinearScale, LineElement, PointElement, Tooltip)
 
 Chart.defaults.responsive = true
 

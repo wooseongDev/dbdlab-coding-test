@@ -1,5 +1,6 @@
 import { CovidAgeDailyChart } from '@components/covid-age-daily-chart'
 import { CovidDailyChart } from '@components/covid-daily-chart'
+import { CovidGenderDailyChart } from '@components/covid-gender-daily-chart'
 import { css } from '@emotion/react'
 import { api } from '@tools/api'
 import type { GenAgeCaseItem } from '@tools/api/get-covid19-gen-age-case-inf'
@@ -18,7 +19,11 @@ const Dashboard: NextPage<DashboardProps> = (props) => {
   return (
     <div css={rootStyle}>
       <CovidDailyChart css={covidDailyChartStyle} data={covid19Items} />
-      <CovidAgeDailyChart data={genAgeCaseItems} />
+
+      <div css={chartWrapStyle}>
+        <CovidAgeDailyChart css={covidAgeDailyChartStyle} data={genAgeCaseItems} />
+        <CovidGenderDailyChart css={covidGenderDailyChartStyle} data={genAgeCaseItems} />
+      </div>
     </div>
   )
 }
@@ -44,6 +49,19 @@ const rootStyle = css`
 
 const covidDailyChartStyle = css`
   border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+`
+
+const chartWrapStyle = css`
+  display: flex;
+`
+
+const covidAgeDailyChartStyle = css`
+  flex-basis: 50%;
+  border-right: 1px solid rgba(204, 204, 204, 0.5);
+`
+
+const covidGenderDailyChartStyle = css`
+  flex-basis: 50%;
 `
 
 export default Dashboard

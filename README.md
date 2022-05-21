@@ -60,9 +60,9 @@ yarn start
 - [x] json 파일 `GET` api 작성
     - axios 설치
     - notion 에 있는 json 파일 사용
-- [ ] 코로나 확진자 수 차트 작성
+- [x] 코로나 확진자 수 차트 작성
     - 차트 라이브러리 설치
     - [x] 일자별
     - [x] 연령별
-    - [ ] 성별
+    - [x] 성별
 - [ ] Next api routing 으로 api 수정
