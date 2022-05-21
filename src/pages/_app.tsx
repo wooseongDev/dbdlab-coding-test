@@ -1,3 +1,5 @@
+import '@tools/utils/chart-js.util'
+
 import { AppLayout } from '@components/app-layout'
 import { Global } from '@emotion/react'
 import { globalStyle } from '@styles/global-style'

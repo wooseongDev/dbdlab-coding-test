@@ -1,3 +1,4 @@
+import { CovidDailyChart } from '@components/covid-daily-chart'
 import { css } from '@emotion/react'
 import { api } from '@tools/api'
 import type { GenAgeCaseItem } from '@tools/api/get-covid19-gen-age-case-inf'
@@ -15,7 +16,7 @@ const Dashboard: NextPage<DashboardProps> = (props) => {
 
   return (
     <div css={rootStyle}>
-      <p css={textStyle}>디비디랩 프론트엔드 사전과제</p>
+      <CovidDailyChart data={covid19Items} />
     </div>
   )
 }
