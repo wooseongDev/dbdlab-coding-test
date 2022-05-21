@@ -3,14 +3,14 @@ import { CovidDailyChart } from '@components/covid-daily-chart'
 import { CovidGenderDailyChart } from '@components/covid-gender-daily-chart'
 import { css } from '@emotion/react'
 import { api } from '@tools/api'
-import type { GenAgeCaseItem } from '@tools/api/get-covid19-gen-age-case-inf'
-import type { Covid19Item } from '@tools/api/get-covid19-inf-state'
+import { Covid19GenAgeCaseItem } from '@tools/api/requests/get-covid19-gen-age-case-inf'
+import { Covid19Item } from '@tools/api/requests/get-covid19-inf-state'
 import type { GetServerSideProps, NextPage } from 'next'
 import React from 'react'
 
 type DashboardProps = {
   covid19Items: Covid19Item[]
-  genAgeCaseItems: GenAgeCaseItem[]
+  genAgeCaseItems: Covid19GenAgeCaseItem[]
 }
 
 const Dashboard: NextPage<DashboardProps> = (props) => {

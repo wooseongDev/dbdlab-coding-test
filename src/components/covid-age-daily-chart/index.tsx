@@ -1,6 +1,6 @@
 import { ChartBox } from '@components/chart-box'
 import { css } from '@emotion/react'
-import { GenAgeCaseItem } from '@tools/api/get-covid19-gen-age-case-inf'
+import type { Covid19GenAgeCaseItem } from '@tools/api/requests/get-covid19-gen-age-case-inf'
 import { ChartData, ChartOptions } from 'chart.js'
 import dayjs from 'dayjs'
 import { groupBy, sortBy, uniqBy } from 'lodash'
@@ -10,7 +10,7 @@ import { Bar } from 'react-chartjs-2'
 type CovidAgeDailyChartProps = {
   className?: string
 
-  data: GenAgeCaseItem[]
+  data: Covid19GenAgeCaseItem[]
 }
 
 const options: ChartOptions<'bar'> = {

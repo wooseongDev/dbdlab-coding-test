@@ -1,6 +1,6 @@
 import { ChartBox } from '@components/chart-box'
 import { css } from '@emotion/react'
-import { Covid19Item } from '@tools/api/get-covid19-inf-state'
+import { Covid19Item } from '@tools/api/requests/get-covid19-inf-state'
 import { ChartData, ChartOptions } from 'chart.js'
 import dayjs from 'dayjs'
 import { sortBy } from 'lodash'

@@ -1,7 +1,7 @@
 import { ChartBox } from '@components/chart-box'
 import { Select } from '@components/select'
 import { css } from '@emotion/react'
-import { GenAgeCaseItem } from '@tools/api/get-covid19-gen-age-case-inf'
+import type { Covid19GenAgeCaseItem } from '@tools/api/requests/get-covid19-gen-age-case-inf'
 import { ChartData, ChartOptions } from 'chart.js'
 import dayjs from 'dayjs'
 import { groupBy, sortBy, uniqBy } from 'lodash'
@@ -13,7 +13,7 @@ import { useSelect } from '../../hooks/use-select'
 type CovidGenderDailyChartProps = {
   className?: string
 
-  data: GenAgeCaseItem[]
+  data: Covid19GenAgeCaseItem[]
 }
 
 const options: ChartOptions<'doughnut'> = {

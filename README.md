@@ -65,4 +65,4 @@ yarn start
     - [x] 일자별
     - [x] 연령별
     - [x] 성별
-- [ ] Next api routing 으로 api 수정
+- [x] Next api routing 으로 api 수정
