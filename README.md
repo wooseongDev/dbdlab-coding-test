@@ -68,3 +68,7 @@ yarn start
     - [x] 연령별
     - [x] 성별
 - [x] Next api routing 으로 api 수정
+- [ ] 리팩터링
+    - [ ] hooks 폴더 절대경로 설정
+    - [ ] server side props 에서 data 날짜별 sorting 하기
+    - [ ] css 수정
