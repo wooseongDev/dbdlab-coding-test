@@ -3,7 +3,7 @@ import { css } from '@emotion/react'
 import type { Covid19GenAgeCaseItem } from '@tools/api/requests/get-covid19-gen-age-case-inf'
 import { ChartData, ChartOptions } from 'chart.js'
 import dayjs from 'dayjs'
-import { groupBy, sortBy, uniqBy } from 'lodash'
+import { groupBy, uniq } from 'lodash'
 import React, { useMemo } from 'react'
 import { Bar } from 'react-chartjs-2'
 
@@ -30,10 +30,8 @@ export const CovidAgeDailyChart: React.FC<CovidAgeDailyChartProps> = (props) => 
   const { className, data } = props
 
   const chartData = useMemo((): ChartData<'bar', string[], string> => {
-    const sorted = sortBy(data, (item) => item.stateDt)
-    const grouped = groupBy(sorted, (item) => item.gubun)
-
-    const labels = uniqBy(sorted, (item) => item.stateDt).map((item) => dayjs(item.stateDt).format('MM/DD'))
+    const grouped = groupBy(data, (item) => item.gubun)
+    const labels = uniq(data.map((item) => dayjs(item.stateDt).format('MM/DD')))
 
     return {
       labels,

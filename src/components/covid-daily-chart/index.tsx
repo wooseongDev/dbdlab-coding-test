@@ -3,7 +3,6 @@ import { css } from '@emotion/react'
 import { Covid19Item } from '@tools/api/requests/get-covid19-inf-state'
 import { ChartData, ChartOptions } from 'chart.js'
 import dayjs from 'dayjs'
-import { sortBy } from 'lodash'
 import React, { useMemo } from 'react'
 import { Line } from 'react-chartjs-2'
 
@@ -25,14 +24,14 @@ export const CovidDailyChart: React.FC<CovidDailyChartProps> = (props) => {
   const { className, data } = props
 
   const chartData = useMemo((): ChartData<'line', string[], string> => {
-    const sorted = sortBy(data, (item) => item.stateDt)
+    const labels = data.map((item) => dayjs(item.stateDt).format('MM/DD'))
 
     return {
-      labels: sorted.map((item) => dayjs(item.stateDt).format('MM/DD')),
+      labels,
       datasets: [
         {
           label: 'stateDt',
-          data: sorted.map((item) => item.decideCnt),
+          data: data.map((item) => item.decideCnt),
           borderColor: '#E79997',
           borderWidth: 4,
         },

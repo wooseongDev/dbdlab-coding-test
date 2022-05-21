@@ -5,7 +5,7 @@ import { useSelect } from '@hooks/use-select'
 import type { Covid19GenAgeCaseItem } from '@tools/api/requests/get-covid19-gen-age-case-inf'
 import { ChartData, ChartOptions } from 'chart.js'
 import dayjs from 'dayjs'
-import { groupBy, sortBy, uniqBy } from 'lodash'
+import { groupBy, uniq } from 'lodash'
 import React, { useMemo } from 'react'
 import { Doughnut } from 'react-chartjs-2'
 
@@ -27,8 +27,7 @@ export const CovidGenderDailyChart: React.FC<CovidGenderDailyChartProps> = (prop
   const { className, data } = props
 
   const dates = useMemo(() => {
-    const sorted = sortBy(data, (item) => item.stateDt)
-    return uniqBy(sorted, (item) => item.stateDt).map((item) => item.stateDt)
+    return uniq(data.map((item) => item.stateDt))
   }, [data])
 
   const [selectedDate, onChange] = useSelect(dates[0])

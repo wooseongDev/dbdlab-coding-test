@@ -5,6 +5,7 @@ import { css } from '@emotion/react'
 import { api } from '@tools/api'
 import { Covid19GenAgeCaseItem } from '@tools/api/requests/get-covid19-gen-age-case-inf'
 import { Covid19Item } from '@tools/api/requests/get-covid19-inf-state'
+import { sortBy } from 'lodash'
 import type { GetServerSideProps, NextPage } from 'next'
 import React from 'react'
 
@@ -32,10 +33,13 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const { items: covid19InfState } = await api.getCovid19InfState()
   const { items: covid19GenAgeCaseInf } = await api.getCovid19GenAgeCaseInf()
 
+  const covid19Items = sortBy(covid19InfState.item, (item) => item.stateDt)
+  const genAgeCaseItems = sortBy(covid19GenAgeCaseInf.item, (item) => item.stateDt)
+
   return {
     props: {
-      covid19Items: covid19InfState.item,
-      genAgeCaseItems: covid19GenAgeCaseInf.item,
+      covid19Items,
+      genAgeCaseItems,
     },
   }
 }
