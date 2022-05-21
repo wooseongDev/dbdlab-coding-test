@@ -1,7 +1,7 @@
 import { ChartBox } from '@components/chart-box'
 import { css } from '@emotion/react'
 import { Covid19Item } from '@tools/api/get-covid19-inf-state'
-import { ChartData } from 'chart.js'
+import { ChartData, ChartOptions } from 'chart.js'
 import dayjs from 'dayjs'
 import { sortBy } from 'lodash'
 import React, { useMemo } from 'react'
@@ -11,6 +11,14 @@ type CovidDailyChartProps = {
   className?: string
 
   data: Covid19Item[]
+}
+
+const options: ChartOptions<'line'> = {
+  plugins: {
+    legend: {
+      display: false,
+    },
+  },
 }
 
 export const CovidDailyChart: React.FC<CovidDailyChartProps> = (props) => {
@@ -23,6 +31,7 @@ export const CovidDailyChart: React.FC<CovidDailyChartProps> = (props) => {
       labels: sorted.map((item) => dayjs(item.stateDt).format('MM/DD')),
       datasets: [
         {
+          label: 'stateDt',
           data: sorted.map((item) => item.decideCnt),
           borderColor: '#E79997',
           borderWidth: 4,
@@ -33,7 +42,7 @@ export const CovidDailyChart: React.FC<CovidDailyChartProps> = (props) => {
 
   return (
     <ChartBox className={className} title="코로나 일자별 확진자 수">
-      <Line css={chartStyle} data={chartData} />
+      <Line css={chartStyle} data={chartData} options={options} />
     </ChartBox>
   )
 }
