@@ -1,13 +1,35 @@
 import { css } from '@emotion/react'
-import type { NextPage } from 'next'
+import { api } from '@tools/api'
+import type { GenAgeCaseItem } from '@tools/api/get-covid19-gen-age-case-inf'
+import type { Covid19Item } from '@tools/api/get-covid19-inf-state'
+import type { GetServerSideProps, NextPage } from 'next'
 import React from 'react'
 
-const Dashboard: NextPage = () => {
+type DashboardProps = {
+  covid19Items: Covid19Item[]
+  genAgeCaseItems: GenAgeCaseItem[]
+}
+
+const Dashboard: NextPage<DashboardProps> = (props) => {
+  const { covid19Items, genAgeCaseItems } = props
+
   return (
     <div css={rootStyle}>
       <p css={textStyle}>디비디랩 프론트엔드 사전과제</p>
     </div>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const { items: covid19InfState } = await api.getCovid19InfState()
+  const { items: covid19GenAgeCaseInf } = await api.getCovid19GenAgeCaseInf()
+
+  return {
+    props: {
+      covid19Items: covid19InfState.item,
+      genAgeCaseItems: covid19GenAgeCaseInf.item,
+    },
+  }
 }
 
 const rootStyle = css`

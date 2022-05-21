@@ -57,7 +57,7 @@ yarn start
     - [x] sidebar 메뉴에 맞는 page 작성
 - [x] layout component 수정
     - sidebar component 의 position 을 fixed 로 적용
-- [ ] json 파일 `GET` api 작성
+- [x] json 파일 `GET` api 작성
     - axios 설치
     - notion 에 있는 json 파일 사용
 - [ ] 코로나 확진자 수 차트 작성
